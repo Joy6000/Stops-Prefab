@@ -12,14 +12,13 @@
             this.commandsDir = options.commandsDir;
             this.owners = [];
 
-            const {prefix, mongoURI, token, showWarns, commandsDir } = options
-            if (showWarns === true) {
-            if (!client) console.warn('Stop Prefab => Missing Discord Client Instance')
-            if (!prefix) console.warn('Stop Prefab => No prefix passed in. Defaulting to \'!\'')
-            if (!token) console.warn('Stop Prefab => No token passed in. Halted')
-            if (!mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
+
+            if (this.showWarns === true) {
+            if (!this.client) console.warn('Stop Prefab => Missing Discord Client Instance')
+            if (!this.prefix) console.warn('Stop Prefab => No prefix passed in. Defaulting to \'!\'')
+            if (!this.mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
             }
-            Start(this.client, this.token, commandsDir, this)
+            Start(this.client, this.commandsDir, this)
 
 
         }
