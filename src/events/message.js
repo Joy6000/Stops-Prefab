@@ -1,11 +1,13 @@
 module.exports = (client, handler, message) => {
     const { prefix, owners, commands } = handler
 
+
     if (message.author.bot) return;
-    if (!message.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.substring(prefix.length).split(/ /g)
     const commandName = args[0]
+    console.log(args)
     args.shift()
 
     const commandOBJ = commands.get(commandName) || commands.find(cmd => cmd.aliases && cmd.aliases.length && cmd.aliases.includes(commandName))
@@ -59,9 +61,10 @@ module.exports = (client, handler, message) => {
     }
 
     try {
-        commandOBJ.execute(message, args, client)
+        commandOBJ.execute({ message, args, client })
     } catch (err) {
         message.reply(`There was an error processing your request. The command that this issue is occuring in is called ${commandName}. If this persists try contacting the bot developer.`)
+        console.log(err)
     }
 
 }
