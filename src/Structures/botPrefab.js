@@ -40,7 +40,7 @@
         }
         /**
          * 
-         * @param {String} token 
+         * @deprecated You must login yourself. Expect this feature to be added in a later version.
          */
         setToken(token) {
             if (typeof token !== 'string') throw new TypeError('Stop Prefab => Token must be a string')
