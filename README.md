@@ -12,7 +12,6 @@ new botPrefab(client, {
 })
 .setPrefix('>') // sets prefix
 .setMongoURI('MONGOURI') // Must have a mongo server up and running!
-.setToken('super secret discord bot token') // REQUIRED!!
 .showWarnings(false) // If set to false warnings will not show. Set to true by default.
 .showLoadedCommands(false) // If set to false it will not log all commands that were successfully loaded. Set to true by default.
 .setOwners(['123456789123456789']) // Sets bot owners for owneronly commands.
@@ -28,4 +27,5 @@ module.exports = {
     }
 }
 ```
-# More functions coming soon!!
+### Making an event
+#### Coming Soon!!
