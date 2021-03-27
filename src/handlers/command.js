@@ -3,7 +3,6 @@ const path = require('path')
 
 function loadCMDS(dir, handler) {
     fs.readdir(`${require.main.path}\\${dir}`, (err, files) => {
-        console.log(require.main.path + `\\${dir}`)
         let totalCommands = 0
         for (const cmd in files) {
             totalCommands++
