@@ -60,7 +60,7 @@ module.exports = (client, handler, message) => {
     }
 
     try {
-        commandOBJ.execute({ message, args, client })
+        commandOBJ.execute({ message, args, client, handler })
     } catch (err) {
         message.reply(`There was an error processing your request. The command that this issue is occuring in is called ${commandName}. If this persists try contacting the bot developer.`)
         console.log(err)

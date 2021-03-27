@@ -1,9 +1,10 @@
-const loadCMDS = require('../handlers/command')
+const { loadAll } = require('../handlers/command')
 const messageListener = require('../events/message')
 const ready = require('../events/ready')
 
-function Start (client, dir, handler) {
-    loadCMDS(dir, handler)
+async function Start (client, dir, handler) {
+    loadAll.loadCMDS(dir, handler)
+    loadAll.loadDefaults(handler)
     client.on('message', message => {
         messageListener(client, handler, message)
     })

@@ -10,6 +10,7 @@
             this.commands = new Discord.Collection();
             this.commandsDir = options.commandsDir;
             this.owners = [];
+            this.loadDFTS = true;
 
 
             if (this.showWarns === true) {
@@ -81,6 +82,15 @@
          */
         setCommandsDir(commandsDir) {
             this.commandsDir = commandsDir
+            return this
+        }
+        /**
+         * 
+         * @param {boolean} load 
+         */
+        loadDefaults(load) {
+            if (typeof load !== 'boolean') throw new TypeError('Stop Prefab => The Load Defaults options must be of boolean value. (true/false)')
+            this.loadDFTS = load
             return this
         }
     }

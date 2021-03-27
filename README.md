@@ -15,6 +15,7 @@ new botPrefab(client, {
 .showWarnings(false) // If set to false warnings will not show. Set to true by default.
 .showLoadedCommands(false) // If set to false it will not log all commands that were successfully loaded. Set to true by default.
 .setOwners(['123456789123456789']) // Sets bot owners for owneronly commands.
+.loadDefaults(true) // I recommend you set this to true, it holds useful commands like reload, and help. Set to true by default.
 ```
 ### Making a command
 Command File in Commands Directory: 

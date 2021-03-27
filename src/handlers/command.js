@@ -10,7 +10,7 @@ function loadCMDS(dir, handler) {
         console.log(`Loaded a total of ${totalCommands} commands.`)
         for (const cmd of files) {
             const File = require(`${require.main.path}\\${dir}\\${cmd}`)
-            if (handler.showLoadedCMDS) {
+            if (handler.showLoadedCMDS === true) {
             if (isReady(File)) {
                 console.log(`Stop Prefab => loaded command "${File.name}"`)
                 handler.commands.set(File.name, File)
@@ -20,8 +20,20 @@ function loadCMDS(dir, handler) {
         }
     }
         
-})
+  })
 }
+function loadDefaults (handler) {
+    if (handler.defaults === true) {
+        fs.readdir('./defaultCommands', (err, files) => {
+            for (const cmd of files) {
+                const File = require(`../defaultCommands/${cmd}`)
+                handler.commands.set(File.name, File)
+            }
+        })
+    }
+
+}
+
 function isReady(file) {
     if (!file.execute || !file.name || !file || file === {}) {
         return false
@@ -29,4 +41,5 @@ function isReady(file) {
         return true
     }
 }
-module.exports = loadCMDS
+
+module.exports.loadAll = { loadCMDS, loadDefaults }
