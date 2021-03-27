@@ -18,7 +18,7 @@
             if (!this.prefix) console.warn('Stop Prefab => No prefix passed in. Defaulting to \'!\'')
             if (!this.mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
             }
-            Start(client, this.commandsDir, this)
+            Start(client, this.commands, this)
 
 
         }
