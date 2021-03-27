@@ -7,7 +7,6 @@ module.exports = (client, handler, message) => {
 
     const args = message.content.substring(prefix.length).split(/ /g)
     const commandName = args[0]
-    console.log(args)
     args.shift()
 
     const commandOBJ = commands.get(commandName) || commands.find(cmd => cmd.aliases && cmd.aliases.length && cmd.aliases.includes(commandName))

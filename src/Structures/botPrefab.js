@@ -29,6 +29,7 @@
         setPrefix(prefix) {
             if (typeof prefix !== 'string') throw new TypeError('Stop Prefab => Prefix must be a string')
             this.prefix = prefix
+            return this
         }
         /**
          * 
@@ -37,6 +38,7 @@
         setMongoURI(URI) {
             if (typeof URI !== 'string') throw new TypeError('Stop Prefab => URI must be a string')
             this.mongoURI = URI
+            return this
         }
         /**
          * 
@@ -45,6 +47,7 @@
         setToken(token) {
             if (typeof token !== 'string') throw new TypeError('Stop Prefab => Token must be a string')
             this.token = token
+            return this
         }
         /**
          * 
@@ -53,6 +56,7 @@
         showWarnings(showWarns) {
             if (typeof showWarns !== 'boolean') throw new TypeError('Stop Prefab => The Show Warns option must be of boolean value. (true/false)')
             this.showWarns = showWarns
+            return this
         }
         /**
          * 
@@ -61,6 +65,7 @@
         showLoadedCommands(showCMDS) {
             if (typeof showCMDS !== 'boolean') throw new TypeError('Stop Prefab => The Show Loaded Commands option must be of boolean value. (true/false)')
             this.showLoadedCMDS = showCMDS
+            return this
         }
         /**
          * 
@@ -69,6 +74,7 @@
         setOwners(Owners) {
             if (typeof Owners === 'string') Owners = [Owners];
             this.owners = Owners
+            return this
         }
     }
     
