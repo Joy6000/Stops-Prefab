@@ -15,7 +15,7 @@ function loadCMDS(dir, handler) {
                 console.log(`Stop Prefab => loaded command ${File.name}`)
                 handler.commands.set(File.name, File)
             } else {
-                console.log(`Stop Prefab =>Failed to load command "${File.name}"`)
+                console.log(`Stop Prefab => Failed to load command "${File.name}"`)
             }
         }
         if (!isReady(File)) console.log(`Stop Prefab => Failed to load command "${File.name}"`)

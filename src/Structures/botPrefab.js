@@ -1,6 +1,5 @@
     const Discord = require('discord.js')
-    const login = require('./login')
-    const loadCMDS = require('../handlers/command')
+    const Start = require('../utils/utils')
     class Bot {
         constructor(client, options = {}) {
             this.client = client;
@@ -9,8 +8,9 @@
             this.token = options.token;
             this.showWarns = true;
             this.showLoadedCMDS = true;
-            this.commands = new Discord.Collection()
-            this.commandsDir = options.commandsDir
+            this.commands = new Discord.Collection();
+            this.commandsDir = options.commandsDir;
+            this.owners = [];
 
             const {prefix, mongoURI, token, showWarns, commandsDir } = options
             if (showWarns === true) {
@@ -19,8 +19,7 @@
             if (!token) console.warn('Stop Prefab => No token passed in. Halted')
             if (!mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
             }
-            login(this.client, this.token)
-            loadCMDS(commandsDir, Bot)
+            Start(this.client, this.token, commandsDir, this)
 
 
         }
@@ -63,6 +62,14 @@
         showLoadedCommands(showCMDS) {
             if (typeof showCMDS !== 'boolean') throw new TypeError('Stop Prefab => The Show Loaded Commands option must be of boolean value. (true/false)')
             this.showLoadedCMDS = showCMDS
+        }
+        /**
+         * 
+         * @param {Array<String>} Owners 
+         */
+        setOwners(Owners) {
+            if (typeof Owners === 'string') Owners = [Owners];
+            this.owners = Owners
         }
     }
     
