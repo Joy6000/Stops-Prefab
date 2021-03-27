@@ -86,7 +86,7 @@
         }
         /**
          * 
-         * @param {boolean} load 
+         * @deprecated
          */
         loadDefaults(load) {
             if (typeof load !== 'boolean') throw new TypeError('Stop Prefab => The Load Defaults options must be of boolean value. (true/false)')

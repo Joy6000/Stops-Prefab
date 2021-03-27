@@ -22,17 +22,17 @@ function loadCMDS(dir, handler) {
         
   })
 }
-function loadDefaults (handler) {
-    if (handler.defaults === true) {
-        fs.readdir('./defaultCommands', (err, files) => {
-            for (const cmd of files) {
-                const File = require(`../defaultCommands/${cmd}`)
-                handler.commands.set(File.name, File)
-            }
-        })
-    }
+// function loadDefaults (handler) {
+//     if (handler.defaults === true) {
+//         fs.readdir('./defaultCommands', (err, files) => {
+//             for (const cmd of files) {
+//                 const File = require(`../defaultCommands/${cmd}`)
+//                 handler.commands.set(File.name, File)
+//             }
+//         })
+//     }
 
-}
+// }
 
 function isReady(file) {
     if (!file.execute || !file.name || !file || file === {}) {
@@ -42,4 +42,4 @@ function isReady(file) {
     }
 }
 
-module.exports.loadAll = { loadCMDS, loadDefaults }
+module.exports.loadAll = { loadCMDS }

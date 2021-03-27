@@ -4,7 +4,7 @@ const ready = require('../events/ready')
 
 async function Start (client, dir, handler) {
     loadAll.loadCMDS(dir, handler)
-    loadAll.loadDefaults(handler)
+    // loadAll.loadDefaults(handler)
     client.on('message', message => {
         messageListener(client, handler, message)
     })
