@@ -5,7 +5,7 @@ const ready = require('../events/ready')
 function Start (client, dir, handler) {
     loadCMDS(dir, handler)
     client.on('message', message => {
-        messageListener(client, message, handler)
+        messageListener(client, handler, message)
     })
     ready(client)
 }
