@@ -9,7 +9,7 @@
             this.showWarns = true;
             this.showLoadedCMDS = true;
             this.commands = new Discord.Collection();
-            this.commandsDir = options.commandsDir;
+            this.commandsDir = 'commands';
             this.owners = [];
 
 
