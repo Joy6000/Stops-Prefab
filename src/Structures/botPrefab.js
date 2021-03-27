@@ -5,11 +5,10 @@
             this.client = client;
             this.prefix = '!';
             this.mongoURI = options.mongoURI;
-            this.token = options.token;
             this.showWarns = true;
             this.showLoadedCMDS = true;
             this.commands = new Discord.Collection();
-            this.commandsDir = 'commands';
+            this.commandsDir = options.commandsDir;
             this.owners = [];
 
 
