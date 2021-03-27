@@ -18,7 +18,7 @@
             if (!this.prefix) console.warn('Stop Prefab => No prefix passed in. Defaulting to \'!\'')
             if (!this.mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
             }
-            Start(client, this.commands, this)
+            Start(client, this.commandsDir, this)
 
 
         }
@@ -74,6 +74,14 @@
         setOwners(Owners) {
             if (typeof Owners === 'string') Owners = [Owners];
             this.owners = Owners
+            return this
+        }
+        /**
+         * 
+         * @param {String>} commandsDir
+         */
+        setCommandsDir(commandsDir) {
+            this.commandsDir = commandsDir
             return this
         }
     }
