@@ -32,7 +32,7 @@ module.exports = {
 ### Making an event
 Event File in Events Directory called (message.js): 
 ```js
-module.exports = (message, client, handler) => {
+module.exports = (client, handler, message) => {
     console.log('Successfully cached message!')
     message.channel.send('Hello!') // I DO NOT RECOMMEND DOING THIS. IT WILL LEAD TO RATE LIMITS (if there is a very active chat) AND/OR CONFUSION IN ALL PARTIES.
 }
