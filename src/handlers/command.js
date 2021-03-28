@@ -21,19 +21,6 @@ function loadCMDS(dir, handler) {
     }
         
   })
-}
-// function loadDefaults (handler) {
-//     if (handler.defaults === true) {
-//         fs.readdir('./defaultCommands', (err, files) => {
-//             for (const cmd of files) {
-//                 const File = require(`../defaultCommands/${cmd}`)
-//                 handler.commands.set(File.name, File)
-//             }
-//         })
-//     }
-
-// }
-
 function isReady(file) {
     if (!file.execute || !file.name || !file || file === {}) {
         return false
@@ -41,5 +28,6 @@ function isReady(file) {
         return true
     }
 }
+}
 
-module.exports.loadAll = { loadCMDS }
+module.exports = loadCMDS

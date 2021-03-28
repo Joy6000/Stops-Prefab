@@ -9,16 +9,20 @@
             this.showLoadedCMDS = true;
             this.commands = new Discord.Collection();
             this.commandsDir = options.commandsDir;
+            this.events = new Discord.Collection();
+            this.eventsDir = options.eventsDir;
             this.owners = [];
+            this.showLoadedEVNS = true;
             this.loadDFTS = true;
 
 
             if (this.showWarns === true) {
-            if (!this.client) console.warn('Stop Prefab => Missing Discord Client Instance')
-            if (!this.prefix) console.warn('Stop Prefab => No prefix passed in. Defaulting to \'!\'')
+            if (!this.client) console.warn('Stop Prefab => Missing Discord Client Instance.')
+            if (!this.commandsDir) console.warn('Stop Prefab => Missing commands directory.')
+            if (!this.eventsDir) console.warn('Stop Prefab => Missing events directory.')
             if (!this.mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
             }
-            Start(client, options.commandsDir, this)
+            Start(client, options.commandsDir, options.eventsDir, this)
 
 
         }
@@ -53,9 +57,9 @@
          * 
          * @param {boolean} showWarns 
          */
-        showWarnings(showWarns) {
+        showWarnings(showWarn) {
             if (typeof showWarns !== 'boolean') throw new TypeError('Stop Prefab => The Show Warns option must be of boolean value. (true/false)')
-            this.showWarns = showWarns
+            this.showWarns = showWarn
             return this
         }
         /**
@@ -89,8 +93,13 @@
          * @deprecated
          */
         loadDefaults(load) {
-            if (typeof load !== 'boolean') throw new TypeError('Stop Prefab => The Load Defaults options must be of boolean value. (true/false)')
+            if (typeof load !== 'boolean') throw new TypeError('Stop Prefab => The Load Defaults option must be of boolean value. (true/false)')
             this.loadDFTS = load
+            return this
+        }
+        showLoadedEvents(showEVNS) {
+            if (typeof showEVNS !== 'boolean') throw new TypeError('Stop Prefab => The Show Loaded Events option must be of boolean value. (true/false)')
+            this.showLoadedEVNS = showEVNS
             return this
         }
     }
