@@ -52,7 +52,7 @@
          */
         setToken(token) {
             if (typeof token !== 'string') throw new TypeError('Stop Prefab => Token must be a string')
-            this.token = token
+            this.options.token = token
             return this
         }
         /**
