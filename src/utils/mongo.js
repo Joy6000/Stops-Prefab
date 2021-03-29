@@ -1,10 +1,12 @@
 const mongoose = require('mongoose')
-function connect (handler) {
+async function connect (handler) {
+    if (handler.mongoURI) {
         await mongoose.connect(handler.mongoURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         })
   return mongoose
+    } 
 }
 async function connectToMongo(handler) {
     await connect(handler).then(() => {
