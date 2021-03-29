@@ -7,6 +7,7 @@ const ready = require('../events/ready')
 async function Start (client, CMDdir, EVNDir, handler) {
     loadCMDS(CMDdir, handler)
     loadEVNTS(EVNDir, handler, client)
+    client.login(handler.token)
     connectToMongo(handler)
     client.on('message', message => {
         messageListener(client, handler, message)

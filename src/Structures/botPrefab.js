@@ -4,6 +4,7 @@
         constructor(client, options = {}) {
             this.client = client;
             this.prefix = '!';
+            this.token = options.token;
             this.mongoURI = options.mongoURI;
             this.showWarns = true;
             this.showLoadedCMDS = true;
@@ -46,7 +47,7 @@
         }
         /**
          * 
-         * @deprecated You must login yourself. Expect this feature to be added in a later version.
+         * @param {String} token
          */
         setToken(token) {
             if (typeof token !== 'string') throw new TypeError('Stop Prefab => Token must be a string')
