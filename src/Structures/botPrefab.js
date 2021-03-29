@@ -19,7 +19,6 @@
 
             if (this.showWarns === true) {
             if (!this.client) console.warn('Stop Prefab => Missing Discord Client Instance.')
-            if (!this.token) throw new Error('Stop Prefab => No token passed in, cannot login.')
             if (!this.commandsDir) console.warn('Stop Prefab => Missing commands directory.')
             if (!this.eventsDir) console.warn('Stop Prefab => Missing events directory.')
             if (!this.mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
@@ -44,15 +43,6 @@
         setMongoURI(URI) {
             if (typeof URI !== 'string') throw new TypeError('Stop Prefab => URI must be a string')
             this.mongoURI = URI
-            return this
-        }
-        /**
-         * 
-         * @param {String} token
-         */
-        setToken(token) {
-            if (typeof token !== 'string') throw new TypeError('Stop Prefab => Token must be a string')
-            this.options.token = token
             return this
         }
         /**
