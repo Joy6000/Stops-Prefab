@@ -10,7 +10,7 @@ function loadCMDS(dir, handler) {
         for (const cmd of files) {
             const File = require(`${require.main.path}\\${dir}\\${cmd}`)
 
-            if (fs.lstatSync(`${require.main.path}\\${dir}\\${cmd}`).isDirectory(), (err, stats)) {
+            if (fs.lstatSync(`${require.main.path}\\${dir}\\${cmd}`).isDirectory()) {
                 fs.readdir(`${require.main.path}\\${dir}\\${cmd}`, (err, files) => {
                     for (const cmd in files) {
                         totalCommands++
