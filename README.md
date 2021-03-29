@@ -11,6 +11,7 @@ new botPrefab(client, {
     commandsDir: 'commands' // Commands Directory
     eventsDir: 'events'
 })
+.setToken('super secret token') // logs your bot in (EXPERIMENTAL!)
 .setPrefix('>') // sets prefix
 .setMongoURI('MONGOURI') // Must have a mongo server up and running!
 .showWarnings(false) // If set to false warnings will not show. Set to true by default.
