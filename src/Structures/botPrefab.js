@@ -19,6 +19,7 @@
 
             if (this.showWarns === true) {
             if (!this.client) console.warn('Stop Prefab => Missing Discord Client Instance.')
+            if (!this.token) throw new Error('Stop Prefab => No token passed in, cannot login.')
             if (!this.commandsDir) console.warn('Stop Prefab => Missing commands directory.')
             if (!this.eventsDir) console.warn('Stop Prefab => Missing events directory.')
             if (!this.mongoURI) console.warn('Stop Prefab => No MongoURI provided.')
