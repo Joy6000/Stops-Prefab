@@ -1,15 +1,15 @@
 const fs = require('fs')
+const readdir = require('recursive-readdir')
 
 function loadCMDS(dir, handler) {
-    fs.readdirSync(`${require.main.path}\\${dir}`, (err, files) => {
+    const path = `${require.main.path}\\${dir}`
+    readdir(path, (err, files) => {
         let totalCommands = 0
         for (const cmd in files) {
             totalCommands++
         }
-        console.log(`Loaded a total of ${totalCommands} commands.`)
         for (const cmd of files) {
-            const File = require(`${require.main.path}\\${dir}\\${cmd}`)
-
+            const File = require(`${path}\\${cmd}`) 
             if (isReady(File)) {
                 if (handler.showLoadedCMDS = true) { 
                 console.log(`Stop Prefab => loaded command "${File.name}"`)
@@ -19,8 +19,9 @@ function loadCMDS(dir, handler) {
             } else {
                 console.log(`Stop Prefab => Failed to load command "${cmd}"`)
             }
+
+        }
         
-    }
         
   })
 function isReady(file) {
