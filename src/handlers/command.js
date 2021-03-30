@@ -9,7 +9,7 @@ function loadCMDS(dir, handler) {
             totalCommands++
         }
         for (const cmd of files) {
-            const File = require(`${path}\\${cmd}`) 
+            const File = require(`${cmd}`) 
             if (isReady(File)) {
                 if (handler.showLoadedCMDS = true) { 
                 console.log(`Stop Prefab => loaded command "${File.name}"`)
