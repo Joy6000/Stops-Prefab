@@ -17,7 +17,8 @@ function loadCMDS(dir, handler) {
                 handler.commands.set(File.name, File)
                 console.log(`Loaded a total of ${totalCommands} commands.`)
             } else {
-                console.log(`Stop Prefab => Failed to load command "${cmd}"`)
+                const failed = cmd.replace(/^.*[\\\/]/, '')
+                console.log(`Stop Prefab => Failed to load command "${failed}"`)
             }
 
         }
