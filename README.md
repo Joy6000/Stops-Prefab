@@ -1,7 +1,14 @@
+# Table of contents
+- [Installation](#Installation)
+- [Usage](#Usage)
+    - [Index](#Index:)
+    - [Making Commands](#Making_a_command)
+    - [Making Events](#Making_an_event)
+
 # Installation
 `npm install stops-djs-prefab`
-# Initialization
-Index: 
+# Usage
+### Index: 
 ```js
 const Discord = require('discord.js')
 const client = new Discord.Client()
